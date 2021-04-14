@@ -28,7 +28,7 @@ class L1_plus_perceptualLoss(nn.Module):
             self.vgg_submodel.add_module(str(i),layer)
             if i == perceptual_layers:
                 break
-        self.vgg_submodel = torch.nn.DataParallel(self.vgg_submodel, device_ids=gpu_ids).cuda()
+        self.vgg_submodel = torch.nn.DataParallel(self.vgg_submodel, device_ids=[0]).cuda()
 
         print(self.vgg_submodel)
 
