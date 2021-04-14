@@ -156,7 +156,7 @@ def define_G(input_nc, output_nc, ngf, which_model_netG, norm='batch', use_dropo
     else:
         raise NotImplementedError('Generator model name [%s] is not recognized' % which_model_netG)
     if len(gpu_ids) > 1:
-        netG = torch.nn.DataParallel(netG, device_ids=gpu_ids)
+        netG = torch.nn.DataParallel(netG, device_ids=[0])
     netG.cuda()
     init_weights(netG, init_type=init_type)
     return netG
@@ -180,7 +180,7 @@ def define_D(input_nc, ndf, which_model_netD,
         raise NotImplementedError('Discriminator model name [%s] is not recognized' %
                                   which_model_netD)
     if len(gpu_ids) > 1:
-        netD = torch.nn.DataParallel(netD, device_ids=gpu_ids)
+        netD = torch.nn.DataParallel(netD, device_ids=[0])
     netD.cuda()
 
     return netD
