@@ -7,7 +7,7 @@ MISSING_VALUE = -1
 # fix PATH
 img_dir = '/content/DLProject/deepfashion'
 annotations_file = os.path.join(img_dir, 'fashion-resize-annotation-test.csv') #pose annotation path
-save_path = os.path.join(img_dir, '/fashion_resize/testK')
+save_path = os.path.join(img_dir, 'fashion_resize/testK')
 if not os.path.exists(save_path):
     os.makedirs(save_path)
 
