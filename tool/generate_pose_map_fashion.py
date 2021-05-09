@@ -7,7 +7,10 @@ MISSING_VALUE = -1
 # fix PATH
 img_dir = '/content/DLProject/deepfashion'
 annotations_file = os.path.join('/content/DLProject/results/test_keypoints/pckh.csv') #pose annotation path
+annotations_file_train = os.path.join('/content/DLProject/results/train_keypoints/pckh.csv')
+
 save_path = os.path.join(img_dir, 'fashion_resize/testK')
+save_path_train = os.path.join(img_dir, 'fashion_resize/trainK')
 if not os.path.exists(save_path):
     os.makedirs(save_path)
 
@@ -43,6 +46,5 @@ def compute_pose(image_dir, annotations_file, savePath, sigma):
         # input()
   
 compute_pose(img_dir, annotations_file, save_path,6)
-
-
+compute_pose(img_dir, annotations_file_train, save_path_train,6)
 
