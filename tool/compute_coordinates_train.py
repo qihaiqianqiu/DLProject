@@ -181,7 +181,6 @@ output_path = '/content/DLProject/results/train_keypoints/pckh.csv'
 
 
 img_list = os.listdir(input_folder)
-img_list.pop(0)
 
 threshold = 0.1
 boxsize = 368
