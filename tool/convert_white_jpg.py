@@ -22,7 +22,12 @@ def convert_dataset(folder, new_folder):
         #p.paste(img,(0,0,x,y),img2)
         p.save(new_name.strip('.png') + '.jpg')
 
-  
-convert_dataset(root_dir + '/raw', root_dir + '/train')
+try:
+    convert_dataset(root_dir + '/raw_train', root_dir + '/train')
+except:
+    pass
 
-convert_dataset(root_dir + '/raw', root_dir + '/test')
+try:
+    convert_dataset(root_dir + '/raw_test', root_dir + '/test')
+except:
+    pass
