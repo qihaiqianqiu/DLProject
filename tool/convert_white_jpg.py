@@ -23,4 +23,6 @@ def convert_dataset(folder, new_folder):
         p.save(new_name.strip('.png') + '.jpg')
 
   
+convert_dataset(root_dir + '/raw', root_dir + '/train')
+
 convert_dataset(root_dir + '/raw', root_dir + '/test')
