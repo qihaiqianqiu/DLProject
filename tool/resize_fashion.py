@@ -45,7 +45,7 @@ def resize_annotations(name, new_name, new_size = (256, 176), old_size = (256, 2
 
 root_dir = '/content/DLProject/deepfashion'
 
-resize_dataset(root_dir + '/test', root_dir + '/fashion_resize/test')
+#resize_dataset(root_dir + '/test', root_dir + '/fashion_resize/test')
 # resize_annotations(root_dir + 'fasion-annotation-test.csv', root_dir + 'fasion-resize-annotation-test.csv')
 
 resize_dataset(root_dir + '/train', root_dir + '/fashion_resize/train')
