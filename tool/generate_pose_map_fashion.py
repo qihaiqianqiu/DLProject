@@ -1,16 +1,17 @@
 import numpy as np
 import pandas as pd 
 import json
-import os 
+import os
+import sys
 
 MISSING_VALUE = -1
 # fix PATH
 img_dir = '/content/DLProject/deepfashion'
-annotations_file = os.path.join('/content/DLProject/results/test_keypoints/pckh.csv') #pose annotation path
-annotations_file_train = os.path.join('/content/DLProject/results/train_keypoints/pckh.csv')
 
-save_path = os.path.join(img_dir, 'fashion_resize/testK')
-save_path_train = os.path.join(img_dir, 'fashion_resize/trainK')
+annotations_file = os.path.join('/content/DLProject/results/' + sys.argv[1] + '_keypoints/pckh.csv') #pose annotation path
+
+save_path = os.path.join(img_dir, 'fashion_resize/' + sys.argv[1] + 'K')
+
 if not os.path.exists(save_path):
     os.makedirs(save_path)
 
@@ -44,7 +45,6 @@ def compute_pose(image_dir, annotations_file, savePath, sigma):
         pose = cords_to_map(kp_array, image_size, sigma)
         np.save(file_name, pose)
         # input()
-  
-compute_pose(img_dir, annotations_file, save_path,6)
-compute_pose(img_dir, annotations_file_train, save_path_train,6)
 
+
+compute_pose(img_dir, annotations_file, save_path,6)
