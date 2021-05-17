@@ -174,8 +174,8 @@ def compute_cordinates(heatmap_avg, paf_avg, th1=0.1, th2=0.05):
             cordinates.append([X, Y])
     return np.array(cordinates).astype(int)
 
-input_folder = '/content/DLProject/deepfashion/fashion_resize/' + sys.args[1]
-output_path = '/content/DLProject/results/'+ sys.args[1] + '_keypoints/pckh.csv'
+input_folder = '/content/DLProject/deepfashion/fashion_resize/' + sys.argv[1]
+output_path = '/content/DLProject/results/'+ sys.argv[1] + '_keypoints/pckh.csv'
 
 # input_folder = './results/market_PATN/test_latest/images_crop/'
 # output_path = './results/test_keypoints/pckh.csv'
