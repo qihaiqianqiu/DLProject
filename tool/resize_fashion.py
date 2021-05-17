@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import json
 from PIL import Image
+import sys
 
 def resize_dataset(folder, new_folder, new_size = (256, 176), crop_bord=40):
     if not os.path.exists(new_folder):
@@ -45,10 +46,10 @@ def resize_annotations(name, new_name, new_size = (256, 176), old_size = (256, 2
 
 root_dir = '/content/DLProject/deepfashion'
 
-#resize_dataset(root_dir + '/test', root_dir + '/fashion_resize/test')
+resize_dataset(root_dir + '/' + sys.argv[1], root_dir + '/fashion_resize/' + sys.argv[1])
 # resize_annotations(root_dir + 'fasion-annotation-test.csv', root_dir + 'fasion-resize-annotation-test.csv')
 
-resize_dataset(root_dir + '/train', root_dir + '/fashion_resize/train')
+#resize_dataset(root_dir + '/train', root_dir + '/fashion_resize/train')
 # resize_annotations(root_dir + 'fasion-annotation-train.csv', root_dir + 'fasion-resize-annotation-train.csv')
 
 
