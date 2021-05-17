@@ -21,7 +21,10 @@ def convert_dataset(folder, new_folder):
         #p = Image.new('RGB', img.size, (255,255,255))
         p.paste(img, (int(new_x/2-x/2),int(new_y/2-y/2) , int(new_x/2-x/2)+x, int(new_y/2-y/2)+y), img2)
         #p.paste(img,(0,0,x,y),img2)
-        p.save(new_name.strip('.png') + '.jpg')
+        if '.png' in new_name:
+            p.save(new_name.strip('.png') + '.jpg')
+        else:
+            p.save(new_name)
 
 convert_dataset(root_dir + '/raw_' + sys.argv[1], root_dir + '/'+ sys.argv[1])
 
